@@ -37,7 +37,4 @@ component extends=frameworkone {
 	application.myapp = {
 		version: "1.0.0"
 	};
-
-	function setupApplication() {
-	}
 }
