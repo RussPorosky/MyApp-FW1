@@ -1,8 +1,8 @@
 component extends=frameworkone {
 	this.name = "MyApp";
 	this.version = "1.0.0";
-	this.mappings["/app"] = getDirectoryFromPath( CGI.PATH_TRANSLATED ).replaceFirst( "/public", "" );
-
+	this.current_path = getDirectoryFromPath( ( structKeyExists( CGI, 'PATH_TRANSLATED' ) ) ? CGI.PATH_TRANSLATED : CGI.CF_TEMPLATE_PATH );
+	this.mappings["/app"] = left( this.current_path, len( this.current_path ) - len( listLast( this.current_path, "/" ) ) -1 );
 	this.diConfig = {
 		strict = true,
 		exclude = [
