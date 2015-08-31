@@ -29,7 +29,7 @@ component extends=frameworkone {
 		SESOmitIndex = true,
 		reloadApplicationOnEveryRequest = true,
 		unhandledPaths = "/css,/fonts,/images,/js",
-		diEngine = "app.framework.ioc",
+		diComponent = "app.framework.ioc",
 		diLocations = "/app/model,/app/controllers",
 		diConfig = this.diConfig
 	};
@@ -39,7 +39,5 @@ component extends=frameworkone {
 	};
 
 	function setupApplication() {
-		var beanFactory = new "#variables.framework.diEngine#"( "/app/model", this.diConfig );
-		setBeanFactory( beanFactory );
 	}
 }
