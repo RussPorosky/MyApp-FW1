@@ -1,9 +1,9 @@
 component extends=frameworkone {
 	this.name = "MyApp";
 	this.version = "1.0.0";
-	this.current_path = getDirectoryFromPath( ( structKeyExists( CGI, 'PATH_TRANSLATED' ) ) ? CGI.PATH_TRANSLATED : CGI.CF_TEMPLATE_PATH );
-	this.mappings["/app"] = left( this.current_path, len( this.current_path ) - len( listLast( this.current_path, "/" ) ) -1 );
-	structDelete( this, 'current_path' );
+	this.current_path = getDirectoryFromPath( ( structKeyExists( CGI, "PATH_TRANSLATED" ) ) ? CGI.PATH_TRANSLATED : CGI.CF_TEMPLATE_PATH );
+	this.mappings["/app"] = left( this.current_path, len( this.current_path ) - len( listLast( this.current_path, "/" ) ) - 1 );
+	structDelete( this, "current_path" );
 	this.diConfig = {
 		strict = true,
 		exclude = [
